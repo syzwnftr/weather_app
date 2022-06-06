@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* background-color: aqua; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+    max-width: 100%;
+    padding: 1.7rem 1rem 4rem 1rem;
+}
+
+.city-date {
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 1.85rem;
+    margin-bottom: 0.2rem;
+}
+
+.icon-temp {
+    /* outline: 1px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    text-align: center;
+    margin-right: 0.5rem;
+}
+
+.icon img {
+    max-width: 100%;
+}
+
+.temp {
+    margin-left: 0.5rem;
+}
+
+.temp .temp-value {
+    font-size: 3.5rem;
+}
+
+.temp .temp-condition {
+    font-size: 1.05rem;
+}
