@@ -56,4 +56,19 @@ h1 {
     border-bottom: 1px solid black;
     margin: 1rem 0;
     padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.details-column {
+    outline: 1px solid black;
+}
+
+.column:first-child {
+    margin-bottom: 1rem;
+}
+
+.temp-high-low .value {
+    margin-bottom: 0.2rem;
 }
