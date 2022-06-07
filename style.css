@@ -50,3 +50,10 @@ h1 {
 .temp .temp-condition {
     font-size: 1.05rem;
 }
+
+.weather-details {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin: 1rem 0;
+    padding: 1rem 2rem;
+}
