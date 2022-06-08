@@ -72,3 +72,12 @@ h1 {
 .column .value-text {
     font-size: 0.8rem;
 }
+
+.day-column-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.day-column {
+    outline: 1px solid black;
+}
