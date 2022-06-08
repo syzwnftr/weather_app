@@ -75,9 +75,19 @@ h1 {
 
 .day-column-wrapper {
     display: flex;
+    justify-content: space-between;
     align-items: center;
+}
+
+.next-day-title {
+    margin-bottom: 1rem;
 }
 
 .day-column {
     outline: 1px solid black;
+    border-radius: 0.1rem;
+    padding: 0.8rem 0;
+    max-width: 58px;
+    text-align: center;
+    font-size: 0.8rem;
 }
