@@ -5,8 +5,9 @@
 }
 
 body {
-    /* background-color: aqua; */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgba(52, 142, 202, 0.849);
+    color: #fff;
 }
 
 .container {
@@ -52,8 +53,8 @@ h1 {
 }
 
 .weather-details {
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
     margin: 1rem 0;
     padding: 1rem 2rem;
     display: flex;
