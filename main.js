@@ -1,6 +1,10 @@
 // Selecting elements
-const tempValue = document.querySelector('#tempValue');
-
+const cityValue = document.querySelector('#city');
+const weatherIcon = document.querySelector('#weatherIcon');
+const tempValue = document.querySelector('#tempValue p');
+const tempMax = document.querySelector('#tempMax');
+const tempMin = document.querySelector('#tempMin');
+const tempCondition = document.querySelector('.temp-condition p')
 
 // Weather data
 const weather = {};
@@ -32,4 +36,34 @@ function getWeather(latitude, longitude) {
     let api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${APIKEY}`;
     
     console.log(api);
+
+    fetch(api)
+        .then(response => {
+            let data = response.json();
+            return data;
+        })
+        .then(data => {
+            weather.temperature.value = Math.floor(data.main.temp - KELVIN);
+            weather.temperature.min = Math.floor(data.main.temp_min - KELVIN);
+            weather.temperature.max = Math.floor(data.main.temp_max - KELVIN);
+
+            weather.description = data.weather[0].description;
+            weather.iconId = data.weather[0].icon;
+
+            weather.city = data.name;
+            weather.country = data.sys.country;
+        })
+        .then(function() {
+            displayWeather();
+        });
+}
+
+// Display weather to UI
+function displayWeather() {
+    cityValue.textContent = `${weather.city}, ${weather.country} `;
+    weatherIcon.innerHTML = `<img src="./icons/${weather.iconId}.png" alt="">`;
+    tempValue.textContent = `${weather.temperature.value}°`;
+    tempCondition.textContent = `${weather.description}`;
+    tempMax.textContent = `${weather.temperature.max}°`;
+    tempMin.textContent = `${weather.temperature.min}°`;
 }
