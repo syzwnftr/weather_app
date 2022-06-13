@@ -16,23 +16,28 @@
             </section>
 
             <section class="icon-temp">
-                <div class="icon">
-                    <img src="./icons/02d.png" alt="icon">
+                <div class="icon" id="weatherIcon">
+                    <img src="./icons/unknown.png" alt="unknown weather">
                 </div>
+
                 <div class="temp">
-                    <div class="temp-value" id="tempValue">21°</div>
-                    <div class="temp-condition">Mostly Sunny</div>
+                    <div class="temp-value" id="tempValue">
+                        <p></p>
+                    </div>
+                    <div class="temp-condition">
+                        <p></p>
+                    </div>
                 </div>
             </section>
 
             <section class="weather-details">
                 <div class="details-column high-low">
                     <div class="column temp-high-low">
-                        <div class="value">23°</div>
+                        <div class="value" id="tempMax">23°</div>
                         <div class="value-text">High</div>
                     </div>
                     <div class="column temp-high-low">
-                        <div class="value">14°</div>
+                        <div class="value" id="tempMin">14°</div>
                         <div class="value-text">Low</div>
                     </div>
                 </div>
