@@ -1,5 +1,5 @@
 // Selecting elements
-const cityValue = document.querySelector('#city');
+const cityValue = document.querySelector('#city p');
 const weatherIcon = document.querySelector('#weatherIcon');
 const tempValue = document.querySelector('#tempValue p');
 const tempMax = document.querySelector('#tempMax');
@@ -60,10 +60,10 @@ function getWeather(latitude, longitude) {
 
 // Display weather to UI
 function displayWeather() {
-    cityValue.textContent = `${weather.city}, ${weather.country} `;
+    cityValue.textContent = `${weather.city}, ${weather.country}`;
     weatherIcon.innerHTML = `<img src="./icons/${weather.iconId}.png" alt="">`;
     tempValue.textContent = `${weather.temperature.value}°`;
-    tempCondition.textContent = `${weather.description}`;
+    // tempCondition.textContent = `${weather.description}`;
     tempMax.textContent = `${weather.temperature.max}°`;
     tempMin.textContent = `${weather.temperature.min}°`;
 }
