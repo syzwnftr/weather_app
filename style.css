@@ -16,12 +16,17 @@ body {
 }
 
 .city-date {
+    outline: 1px solid black;
     margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
-    font-size: 1.85rem;
+    font-size: 1.2rem;
     margin-bottom: 0.2rem;
+    font-weight: 300;
 }
 
 .icon-temp {
@@ -32,12 +37,13 @@ h1 {
 }
 
 .icon {
+    outline: 1px solid black;
     text-align: center;
     margin-right: 0.5rem;
 }
 
 .icon img {
-    max-width: 100%;
+    max-width: 50px;
 }
 
 .temp {
