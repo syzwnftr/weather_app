@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,27 +8,40 @@
 
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: rgb(7, 46, 71);
-    color: #fff;
+    font-family: monospace;
+    /* font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+    /* background-color: rgb(26, 34, 39); */
+    font-family: 'Nunito', sans-serif;
+    color: #000;
 }
 
 .container {
     max-width: 100%;
-    padding: 1.7rem 1rem 4rem 1rem;
+    padding: 1.7rem 1.5rem 4rem 1.5rem;
+}
+
+.city-date-icon {
+    /* outline: 1px solid black; */
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
 }
 
 .city-date {
-    outline: 1px solid black;
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-right: 0.5rem;
 }
 
 h1 {
     font-size: 1.2rem;
-    margin-bottom: 0.2rem;
-    font-weight: 300;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #717171;
+}
+
+#date {
+    font-size: 0.8rem;
+    color: #a1a1a1
 }
 
 .icon-temp {
@@ -37,7 +52,7 @@ h1 {
 }
 
 .icon {
-    outline: 1px solid black;
+    /* outline: 1px solid black; */
     text-align: center;
     margin-right: 0.5rem;
 }
@@ -47,11 +62,14 @@ h1 {
 }
 
 .temp {
-    margin-left: 0.5rem;
+    /* outline: 1px solid black; */
+    text-align: center;
+    /* margin-left: 0.5rem; */
+
 }
 
 .temp .temp-value {
-    font-size: 3.5rem;
+    font-size: 6rem;
 }
 
 .temp .temp-condition {
