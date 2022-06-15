@@ -70,6 +70,7 @@ h1 {
 
 .temp .temp-value {
     font-size: 6rem;
+    color: rgb(247, 191, 39);
 }
 
 .temp .temp-condition {
