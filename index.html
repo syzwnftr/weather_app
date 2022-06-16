@@ -13,32 +13,49 @@
             <section class="location">
                 <div class="city-wrapper">
                     <h1 id="city">Taipei</h1>
-                    <!-- <div id="date">Mon, 29 Aug</div> -->
                 </div>
             </section>
 
             <section class="weather-icon">
                 <div class="icon main" id="weatherIcon">
-                    <img src="./assets/static/thunder.svg" alt="Thunder">
+                    <img src="./assets/animated/thunder.svg" alt="Thunder">
                 </div>
             </section>
 
-            <section class="temp-date">
-                <div class="temp">
+            <section class="temp-date-unit">
+                <div class="temp-date">
                     <div class="temp-value" id="tempValue">
                         <p>22</p>
                     </div>
-
-                    <div class="temp-unit">
-                        <p>°C</p>
-                    </div>
+                    <div id="date">Monday, 29 August</div>
                     <!-- <div class="temp-condition">
                         <p>Cloudy</p>
                     </div> -->
                 </div>
+               
+                <div class="temp-unit">
+                    <p>°C</p>
+                </div>
             </section>
 
             <section class="weather-details">
+                <div class="detail-wrapper first" id="rain">
+                    <img src="./icons/thermometer.png" alt="thermometer">
+                    <p>16°-21°</p>
+                </div>
+
+                <div class="detail-wrapper" id="rain">
+                    <img src="./icons/icon_rainy.png" alt="rain">
+                    <p>5%</p>
+                </div>
+                
+                <div class="detail-wrapper third" id="rain">
+                    <img src="./icons/wind.png" alt="wind">
+                    <p>3 km/h</p>
+                </div>
+            </section>
+
+            <!-- <section class="weather-details">
                 <div class="details-column high-low">
                     <div class="column temp-high-low">
                         <div class="value" id="tempMax">23°</div>
@@ -122,7 +139,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
         </div>
     </main>
 
