@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tiro+Gurmukhi&display=swap');
 
 * {
     margin: 0;
@@ -7,12 +9,10 @@
 }
 
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-family: monospace;
-    /* font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
-    /* background-color: rgb(26, 34, 39); */
     font-family: 'Nunito', sans-serif;
-    color: #000;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    background-color: #1643da;
 }
 
 .container {
@@ -22,7 +22,7 @@ body {
 
 .location{
     /* outline: 1px solid black; */
-    margin-bottom: 4rem;
+    margin-bottom: 3.2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,55 +30,50 @@ body {
 
 h1 {
     font-size: 1.5rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #717171;
+    font-weight: 400;
 }
 
 .weather-icon {
     /* outline: 1px solid black; */
-    margin-bottom: 4rem;
+    margin-bottom: 4.5rem;
 }
 
 .main img {
-    transform: scale(5);
+    transform: scale(4.5);
 }
 
-#date {
-    font-size: 0.8rem;
-    color: #a1a1a1
+.temp-date-unit {
+    /* outline: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
 }
 
 .temp-date {
-    /* outline: 1px solid black; */
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* outline: 1px solid black; */
 }
-
-.temp {
-    display: flex;
-    align-items: flex-start;
-}
-
-/* .temp > * {
-    outline: 1px solid black;
-} */
 
 .temp-value p {
-    font-size: 4rem;
-    color: rgb(247, 191, 39);
+    font-size: 3.5rem;
+    /* color: #56a0ee; */
+    /* color: rgb(247, 191, 39); */
 }
 
 .temp-unit {
-    margin-top: 0.9rem;
-    margin-left: 1rem;
+    margin-top: 1.2rem;
+    margin-left: -1rem;
 }
 
 .temp-unit p {
     font-size: 1.1rem;
-    color: rgb(189, 157, 71);
+    /* color: rgb(189, 157, 71); */
+}
+
+#date {
+    font-size: 0.9rem;
 }
 
 .icon {
@@ -92,49 +87,39 @@ h1 {
 }
 
 
-
-.temp .temp-condition {
-    font-size: 1.05rem;
-}
-
 .weather-details {
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #fff;
-    margin: 1rem 0;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.column:first-child {
-    margin-bottom: 1rem;
-}
-
-.column .value {
-    margin-bottom: 0.2rem;
-}
-
-.column .value-text {
-    font-size: 0.8rem;
-}
-
-.day-column-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.next-day-title {
-    margin-bottom: 1rem;
-}
-
-.day-column {
     /* outline: 1px solid black; */
-    border-radius: 0.2rem;
-    padding: 0.8rem 0;
-    max-width: 17%;
-    text-align: center;
-    font-size: 0.8rem;
-    background-color: rgba(73, 72, 72, 0.171);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
 }
+
+.detail-wrapper {
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.9rem;
+    background-color: #fff;
+    color: #041220;
+}
+
+.detail-wrapper img {
+    max-width: 15px;
+    max-height: 15px;
+    margin-right: 0.5rem;
+}
+
+.first img {
+    margin-right: 0.1rem;
+}
+
+.third img {
+    margin-right: 0.3rem;
+}
+
+.detail-wrapper p {
+    font-size: 0.7rem;
+    color: #0E3669;
+    font-family: 'Tiro Gurmukhi', serif;
+}
+
