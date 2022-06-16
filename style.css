@@ -17,26 +17,31 @@ body {
 
 .container {
     max-width: 100%;
-    padding: 1.7rem 1.5rem 4rem 1.5rem;
+    padding: 2.5rem 1.5rem 4rem 1.5rem;
 }
 
-.city-date-icon {
+.location{
     /* outline: 1px solid black; */
-    margin-bottom: 0;
+    margin-bottom: 4rem;
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.city-date {
-    margin-right: 0.5rem;
-}
-
 h1 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #717171;
+}
+
+.weather-icon {
+    outline: 1px solid black;
+}
+
+.main img {
+    transform: scale(5);
 }
 
 #date {
