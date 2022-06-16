@@ -37,7 +37,8 @@ h1 {
 }
 
 .weather-icon {
-    outline: 1px solid black;
+    /* outline: 1px solid black; */
+    margin-bottom: 4rem;
 }
 
 .main img {
@@ -49,11 +50,35 @@ h1 {
     color: #a1a1a1
 }
 
-.icon-temp {
+.temp-date {
     /* outline: 1px solid black; */
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.temp {
+    display: flex;
+    align-items: flex-start;
+}
+
+/* .temp > * {
+    outline: 1px solid black;
+} */
+
+.temp-value p {
+    font-size: 4rem;
+    color: rgb(247, 191, 39);
+}
+
+.temp-unit {
+    margin-top: 0.9rem;
+    margin-left: 1rem;
+}
+
+.temp-unit p {
+    font-size: 1.1rem;
+    color: rgb(189, 157, 71);
 }
 
 .icon {
@@ -66,17 +91,7 @@ h1 {
     max-width: 50px;
 }
 
-.temp {
-    /* outline: 1px solid black; */
-    text-align: center;
-    /* margin-left: 0.5rem; */
 
-}
-
-.temp .temp-value {
-    font-size: 6rem;
-    color: rgb(247, 191, 39);
-}
 
 .temp .temp-condition {
     font-size: 1.05rem;
