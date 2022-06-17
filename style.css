@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Tiro+Gurmukhi&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
 
 * {
     margin: 0;
@@ -9,21 +10,27 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
     font-family: 'Mulish', sans-serif;
-    background-color: #161c2a;
+    /* background-color: #161c2a;  */
+
     color: #fff;
 }
 
 .container {
     max-width: 100%;
     padding: 4rem 1rem 4rem 1rem;
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(36,37,83,1) 83%);
 }
 
 .main-today-weather {
-    outline: 1px solid white;
+    /* outline: 1px solid white; */
     border-radius: 1.5rem;
     padding: 2rem;
+    background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.27)
 }
 
 .today-date {
@@ -31,6 +38,17 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
+}
+
+.main-today {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.main-date {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
 }
 
 .weather-temp {
@@ -44,18 +62,23 @@ body {
 .temp-value-unit {
     /* outline: 1px solid white; */
     display: flex;
-    margin-right: 2rem;
+    margin-right: 3rem;
 }
 
 .temp-value {
     margin-right: 0.5rem;
     font-size: 3.4rem;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
 }
 
 .temp-unit {
-    margin-top: .6rem;
+    margin-top: .4rem;
     font-size: 1.8rem;
     color: #f3c112;
+    /* color: #e8ce51; */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
 }
 
 .weather-icon img {
