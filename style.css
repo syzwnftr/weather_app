@@ -18,9 +18,19 @@ body {
 
 .container {
     max-width: 100%;
-    padding: 4rem 1rem 4rem 1rem;
+    padding: 2rem 1rem 4rem 1rem;
     background: rgb(2,0,36);
     background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(36,37,83,1) 83%);
+}
+
+.title {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.title h1 {
+    font-size: 1rem;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .main-today-weather {
@@ -43,6 +53,7 @@ body {
 .main-today {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
+    font-size: 1.3rem;
 }
 
 .main-date {
