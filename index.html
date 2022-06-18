@@ -10,16 +10,19 @@
 <body>
     <main>
         <div class="container">
+            <section class="title">
+                <h1>Weather Forecast</h1>
+            </section>
             <section class="main-today-weather">
                 <div class="today-date">
-                    <h1 class="main-today">Today</h1>
+                    <p class="main-today">Today</p>
                     <p class="main-date">Sat, 3 Aug</p>
                 </div>
 
                 <div class="weather-temp">
                     <div class="temp-value-unit">
-                        <p class="temp-value">30</p>
-                        <p class="temp-unit">°C</p>
+                        <p class="temp-value" id="tempValue">30</p>
+                        <p class="temp-unit" id="tempUnit">°C</p>
                     </div>
 
                     <div class="weather-icon">
@@ -29,7 +32,7 @@
 
                 <div class="location">
                     <img src="./icons/location.png" alt="Location">
-                    <p class="city-country">Kansas, USA</p>
+                    <p class="city-country" id="city">Kansas, USA</p>
                 </div>
             </section>
         </div>
