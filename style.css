@@ -134,6 +134,7 @@ body {
     overflow: scroll;
     margin-left: 1rem;
     padding: 0 0 2rem 0;
+    scrollbar-color: #f3c112 #f3c112 ;
 }
 
 .hourly-box {
