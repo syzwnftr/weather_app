@@ -138,7 +138,8 @@ body {
     overflow-x: scroll;
     margin-left: 1rem;
     padding: 0 0 2rem 0;
-    scrollbar-color: #f3c112 #f3c21236 ;
+    /* scrollbar-color: #f3c112 #f3c21236; */
+    scrollbar-width: none;
 }
 
 .hourly-box {
