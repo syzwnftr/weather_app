@@ -22,8 +22,10 @@ body {
 .container {
     max-width: 100%;
     padding: 2rem 0 4rem 0;
-    background: rgb(2,0,36);
-    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(36,37,83,1) 83%);
+    /* background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(36,37,83,1) 83%); */
+    background: rgb(21, 29, 42);
+    background: linear-gradient(180deg, rgba(21, 29, 42, 1) 0%, rgb(32, 43, 63) 83%);
 }
 
 .margin-x {
@@ -140,6 +142,11 @@ body {
     padding: 0 0 2rem 0;
     /* scrollbar-color: #f3c112 #f3c21236; */
     scrollbar-width: none;
+}
+
+/* Remove scrollbar in Chrome */
+.hourly-weather::-webkit-scrollbar {
+    display: none;
 }
 
 .hourly-box {
