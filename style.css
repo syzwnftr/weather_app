@@ -188,3 +188,13 @@ body {
     font-size: 0.8rem;
     margin-top: 0.2rem;
 }
+
+.title-rain {
+    margin-bottom: 1rem;
+}
+
+.title-rain h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+}
