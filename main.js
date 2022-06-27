@@ -76,7 +76,7 @@ const labels = ['10 AM', '11 AM', '12 PM', '01 PM', '02 PM'];
   const data = {
     labels: labels,
     datasets: [{
-      label: 'Rain Percentage',
+      label: 'Chance of rain(%)',
       backgroundColor: '#e7ce60',
       borderColor: '#e7ce60',
       data: [7, 12, 10, 30, 40],
@@ -95,14 +95,28 @@ const labels = ['10 AM', '11 AM', '12 PM', '01 PM', '02 PM'];
             y: {
                 grid: {
                     display: false,
+                    drawBorder: false
                 },
                 ticks: {
-                    maxTicksLimit: 3
+                    maxTicksLimit: 3,
+                    callback: ((context, index) => {
+                        let response;
+                        if(context >= 40) {
+                            response = 'High';
+                        } else if(context >= 20) {
+                            response = 'Medium';
+                        } else {
+                            response = 'Low';
+                        }
+
+                        return response;
+                    })
                 }
             },
             x: {
                 grid: {
-                    display: false
+                    display: false,
+                    drawBorder: false
                 }
             }
         }
