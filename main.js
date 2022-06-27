@@ -1,10 +1,11 @@
 // Selecting elements
-const cityValue = document.querySelector('#city p');
+const cityValue = document.querySelector('#city');
 const weatherIcon = document.querySelector('#weatherIcon');
-const tempValue = document.querySelector('#tempValue p');
-const tempMax = document.querySelector('#tempMax');
-const tempMin = document.querySelector('#tempMin');
-const tempCondition = document.querySelector('.temp-condition p')
+const tempValue = document.querySelector('#tempValue');
+// const tempMax = document.querySelector('#tempMax');
+// const tempMin = document.querySelector('#tempMin');
+// const lowHighTemp = document.querySelector('#lowHighTemp');
+// const tempCondition = document.querySelector('.temp-condition p');
 
 // Weather data
 const weather = {};
@@ -61,9 +62,52 @@ function getWeather(latitude, longitude) {
 // Display weather to UI
 function displayWeather() {
     cityValue.textContent = `${weather.city}, ${weather.country}`;
-    weatherIcon.innerHTML = `<img src="./icons/${weather.iconId}.png" alt="">`;
-    tempValue.textContent = `${weather.temperature.value}°`;
+    // weatherIcon.innerHTML = `<img src="./icons/${weather.iconId}.png" alt="">`;
+    tempValue.textContent = `${weather.temperature.value}`;
     // tempCondition.textContent = `${weather.description}`;
-    tempMax.textContent = `${weather.temperature.max}°`;
-    tempMin.textContent = `${weather.temperature.min}°`;
+    // tempMax.textContent = `${weather.temperature.max}°`;
+    // tempMin.textContent = `${weather.temperature.min}°`;
+    // lowHighTemp.textContent = `${weather.temperature.min}°-${weather.temperature.max}°`;
 }
+
+
+const labels = ['10 AM', '11 AM', '12 PM', '01 PM', '02 PM'];
+
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'Rain Percentage',
+      backgroundColor: '#e7ce60',
+      borderColor: '#e7ce60',
+      data: [7, 12, 10, 30, 40],
+      tension: 0.4
+    }]
+  };
+
+  const config = {
+    type: 'line',
+    data: data,
+    options: {
+        plugins: {
+            legend: {display: false}
+        },
+        scales: {
+            y: {
+                grid: {
+                    display: false,
+                },
+                ticks: {
+                    maxTicksLimit: 3
+                }
+            },
+            x: {
+                grid: {
+                    display: false
+                }
+            }
+        }
+    }
+  };
+
+  const myChart = new Chart(document.getElementById('myChart'),config);
+  console.log(myChart);
