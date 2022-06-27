@@ -71,7 +71,7 @@ function displayWeather() {
 }
 
 
-const labels = ['10 AM', '11 AM', '12 PM', '01 PM', '02 PM'];
+const labels = ['10AM', '12 PM', '2PM', '4PM', '6PM'];
 
   const data = {
     labels: labels,
@@ -89,7 +89,9 @@ const labels = ['10 AM', '11 AM', '12 PM', '01 PM', '02 PM'];
     data: data,
     options: {
         plugins: {
-            legend: {display: false}
+            legend: {
+                display: false,
+            }
         },
         scales: {
             y: {
@@ -98,6 +100,7 @@ const labels = ['10 AM', '11 AM', '12 PM', '01 PM', '02 PM'];
                     drawBorder: false
                 },
                 ticks: {
+                    color: '#525274',
                     maxTicksLimit: 3,
                     callback: ((context, index) => {
                         let response;
@@ -117,6 +120,9 @@ const labels = ['10 AM', '11 AM', '12 PM', '01 PM', '02 PM'];
                 grid: {
                     display: false,
                     drawBorder: false
+                },
+                ticks: {
+                    color: '#525274'
                 }
             }
         }
