@@ -118,6 +118,11 @@ body {
     margin-right: 0.5rem;
 }
 
+.today-weather-hourly {
+    /* outline: 1px solid white; */
+    margin-bottom: 2rem;
+}
+
 .today-title {
     margin-bottom: 1rem;
 }
@@ -137,7 +142,7 @@ body {
     align-items: center;
     overflow-x: scroll;
     margin-left: 1rem;
-    padding: 0 0 2rem 0;
+    /* padding: 0 0 2rem 0; */
     /* scrollbar-color: #f3c112 #f3c21236; */
     scrollbar-width: none;
 }
