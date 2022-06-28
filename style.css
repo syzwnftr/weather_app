@@ -119,9 +119,7 @@ body {
 }
 
 .today-title {
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid rgba(255,255,255,.1);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .today-title h2 {
@@ -207,7 +205,6 @@ body {
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     font-weight: 500;
-    margin-bottom: 1rem;
 }
 
 .days-box {
