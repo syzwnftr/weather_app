@@ -21,7 +21,7 @@ body {
 
 .container {
     max-width: 100%;
-    padding: 2rem 0 2rem 0;
+    padding: 2rem 0 2.5rem 0;
     background: rgb(2,0,36);
     background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(36,37,83,1) 83%);
     /* background: rgb(21, 29, 42);
