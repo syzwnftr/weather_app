@@ -129,5 +129,4 @@ const labels = ['10AM', '12 PM', '2PM', '4PM', '6PM'];
     }
   };
 
-  const myChart = new Chart(document.getElementById('myChart'),config);
-  console.log(myChart);
+  const myChart = new Chart(document.getElementById('myChart'), config);
