@@ -62,7 +62,7 @@ function getWeather(latitude, longitude) {
 // Display weather to UI
 function displayWeather() {
     cityValue.textContent = `${weather.city}, ${weather.country}`;
-    // weatherIcon.innerHTML = `<img src="./icons/${weather.iconId}.png" alt="">`;
+    weatherIcon.innerHTML = `<img src="./icons/${weather.iconId}.png" alt="${weather.description}">`;
     tempValue.textContent = `${weather.temperature.value}`;
     // tempCondition.textContent = `${weather.description}`;
     // tempMax.textContent = `${weather.temperature.max}°`;
