@@ -103,9 +103,9 @@ body {
     font-weight: 600;
 }
 
-.weather-icon img {
+#weatherIcon img {
     /* outline: 1px solid black; */
-    max-width: 100%;
+    max-width: 130px;
 }
 
 .location {
