@@ -13,6 +13,8 @@ weather.temperature = {
     unit: 'celcius'
 }
 
+// Day
+const day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 // App constant / API key
 const KELVIN = 273;
@@ -35,8 +37,10 @@ function setPosition(position) {
 // Get weather from API provider
 function getWeather(latitude, longitude) {
     let api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${APIKEY}`;
+    let oneApi = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=current,minutely&appid=${APIKEY}`;
+
     
-    console.log(api);
+    console.log(oneApi);
 
     fetch(api)
         .then(response => {
@@ -71,6 +75,7 @@ function displayWeather() {
 }
 
 
+// Chart.js 
 const labels = ['10AM', '12 PM', '2PM', '4PM', '6PM'];
 
   const data = {
