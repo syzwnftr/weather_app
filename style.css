@@ -105,7 +105,7 @@ body {
 
 #weatherIcon img {
     /* outline: 1px solid black; */
-    max-width: 130px;
+    max-width: 100%;
 }
 
 .location {
