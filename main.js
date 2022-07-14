@@ -2,6 +2,7 @@
 const cityValue = document.querySelector('#city');
 const weatherIcon = document.querySelector('#weatherIcon');
 const tempValue = document.querySelector('#tempValue');
+const next7DaysEl = document.getElementById('next7days');
 // const tempMax = document.querySelector('#tempMax');
 // const tempMin = document.querySelector('#tempMin');
 // const lowHighTemp = document.querySelector('#lowHighTemp');
@@ -13,7 +14,29 @@ weather.temperature = {
     unit: 'celcius'
 }
 
-// Day
+
+
+function displayNextDay() {
+    let out = 
+    `<div class="days-box">
+        <div class="day">Sun</div>
+        <div class="condition-icon">
+            <img src="./icons/01n.png" alt="">
+            <p class="condition">Sunny</p>
+        </div>
+        <div class="minmax-temp">
+            <div class="temp-value-max">
+                <p>23°</p>
+            </div>
+            <div class="temp-value-min">
+                <p>14°</p>
+            </div>
+        </div>
+    </div>`;
+    next7DaysEl.innerHTML += out;
+}
+
+// Days
 const day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 // App constant / API key
@@ -35,9 +58,9 @@ function setPosition(position) {
 }
 
 // Get weather from API provider
-function getWeather(latitude, longitude) {
+async function getWeather(latitude, longitude) {
     let api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${APIKEY}`;
-    let oneApi = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=current,minutely&appid=${APIKEY}`;
+    let oneApi = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=current,minutely,hourly&appid=${APIKEY}`;
 
     
     console.log(oneApi);
@@ -58,9 +81,22 @@ function getWeather(latitude, longitude) {
             weather.city = data.name;
             weather.country = data.sys.country;
         })
+        // .then(function() {
+        //     displayWeather();
+        // });
+
+    fetch(oneApi)
+        .then(response => {
+            let data = response.json();
+            console.log(data);
+            return data;
+        }).then(data => {
+            weather.daily = data.daily;
+        })
         .then(function() {
             displayWeather();
         });
+
 }
 
 // Display weather to UI
@@ -68,11 +104,12 @@ function displayWeather() {
     cityValue.textContent = `${weather.city}, ${weather.country}`;
     weatherIcon.innerHTML = `<img src="./icons/${weather.iconId}.png" alt="${weather.description}">`;
     tempValue.textContent = `${weather.temperature.value}`;
-    // tempCondition.textContent = `${weather.description}`;
-    // tempMax.textContent = `${weather.temperature.max}°`;
-    // tempMin.textContent = `${weather.temperature.min}°`;
-    // lowHighTemp.textContent = `${weather.temperature.min}°-${weather.temperature.max}°`;
+    // let daily = weather.daily;
+    for(let i = 0; i < weather.daily.length; i++) {
+        displayNextDay();
+    }
 }
+
 
 
 // Chart.js 
