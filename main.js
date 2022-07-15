@@ -3,6 +3,7 @@ const cityValue = document.querySelector('#city');
 const weatherIcon = document.querySelector('#weatherIcon');
 const tempValue = document.querySelector('#tempValue');
 const next7DaysEl = document.getElementById('next7days');
+const mainDate = document.querySelector('.main-date');
 // const tempMax = document.querySelector('#tempMax');
 // const tempMin = document.querySelector('#tempMin');
 // const lowHighTemp = document.querySelector('#lowHighTemp');
@@ -13,8 +14,6 @@ const weather = {};
 weather.temperature = {
     unit: 'celcius'
 }
-
-
 
 function displayNextDay(idx) {
     let today = new Date().getDay() + idx;
@@ -64,6 +63,16 @@ function displayNextDay(idx) {
 
 // Days
 const day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+// Months
+const month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+function getDayAndDate() {
+    let todayDay = new Date().getDay();
+    let todayDate = new Date().getDate();
+    let whatMonth = new Date().getMonth();
+    return `${day[todayDay]}, ${todayDate} ${month[whatMonth]}`;
+}
 
 // App constant / API key
 const KELVIN = 273;
@@ -118,11 +127,6 @@ async function getWeather(latitude, longitude) {
             return data;
         }).then(data => {
             weather.daily = data.daily;
-            
-            // for(let i = 0; i < weather.daily.length; i++) {
-            //     weather.dailyDesc = weather.daily[i].weather[0].description;
-            // }
-
         })
         .then(function() {
             displayWeather();
@@ -134,6 +138,7 @@ async function getWeather(latitude, longitude) {
 
 // Display weather to UI
 function displayWeather() {
+    mainDate.textContent = `${getDayAndDate()}`;
     cityValue.textContent = `${weather.city}, ${weather.country}`;
     weatherIcon.innerHTML = `<img src="./icons/${weather.iconId}.png" alt="${weather.description}">`;
     tempValue.textContent = `${weather.temperature.value}`;
