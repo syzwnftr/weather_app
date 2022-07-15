@@ -27,15 +27,15 @@ function displayNextDay(idx) {
     `<div class="days-box">
         <div class="day">${day[today]}</div>
         <div class="condition-icon">
-            <img src="./icons/01n.png" alt="">
-            <p class="condition">Sunny</p>
+            <img src="./icons/${weather.daily[idx].weather[0].icon}.png" alt="">
+            <p class="condition">${weather.daily[idx].weather[0].description}</p>
         </div>
         <div class="minmax-temp">
             <div class="temp-value-max">
-                <p>23°</p>
+                <p>${Math.floor(weather.daily[idx].temp.day)-KELVIN}°</p>
             </div>
             <div class="temp-value-min">
-                <p>14°</p>
+                <p>${Math.floor(weather.daily[idx].temp.night)-KELVIN}°</p>
             </div>
         </div>
     </div>`;
@@ -43,22 +43,22 @@ function displayNextDay(idx) {
     if(idx === 0) {
         out = 
         `<div class="days-box">
-            <div class="day">Today</div>
+            <div class="day today">Today</div>
             <div class="condition-icon">
-                <img src="./icons/01n.png" alt="">
-                <p class="condition">Sunny</p>
+                <img src="./icons/${weather.daily[idx].weather[0].icon}.png" alt="">
+                <p class="condition">${weather.daily[idx].weather[0].description}</p>
             </div>
             <div class="minmax-temp">
                 <div class="temp-value-max">
-                    <p>23°</p>
+                    <p>${Math.floor(weather.daily[idx].temp.day)-KELVIN}°</p>
                 </div>
                 <div class="temp-value-min">
-                    <p>14°</p>
+                    <p>${Math.floor(weather.daily[idx].temp.night)-KELVIN}°</p>
                 </div>
             </div>
         </div>`;
     }
-    
+
     next7DaysEl.innerHTML += out;
 }
 
@@ -88,7 +88,7 @@ async function getWeather(latitude, longitude) {
     let api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${APIKEY}`;
     let oneApi = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=current,minutely,hourly&appid=${APIKEY}`;
 
-    
+    console.log(api);   
     console.log(oneApi);
 
     fetch(api)
@@ -118,10 +118,17 @@ async function getWeather(latitude, longitude) {
             return data;
         }).then(data => {
             weather.daily = data.daily;
+            
+            // for(let i = 0; i < weather.daily.length; i++) {
+            //     weather.dailyDesc = weather.daily[i].weather[0].description;
+            // }
+
         })
         .then(function() {
             displayWeather();
         });
+
+        console.log('weather', weather)
 
 }
 
