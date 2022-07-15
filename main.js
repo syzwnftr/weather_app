@@ -16,10 +16,16 @@ weather.temperature = {
 
 
 
-function displayNextDay() {
+function displayNextDay(idx) {
+    let today = new Date().getDay() + idx;
+
+    if(today > 6) {
+        today = today - 7;
+    }
+
     let out = 
     `<div class="days-box">
-        <div class="day">Sun</div>
+        <div class="day">${day[today]}</div>
         <div class="condition-icon">
             <img src="./icons/01n.png" alt="">
             <p class="condition">Sunny</p>
@@ -33,6 +39,26 @@ function displayNextDay() {
             </div>
         </div>
     </div>`;
+
+    if(idx === 0) {
+        out = 
+        `<div class="days-box">
+            <div class="day">Today</div>
+            <div class="condition-icon">
+                <img src="./icons/01n.png" alt="">
+                <p class="condition">Sunny</p>
+            </div>
+            <div class="minmax-temp">
+                <div class="temp-value-max">
+                    <p>23°</p>
+                </div>
+                <div class="temp-value-min">
+                    <p>14°</p>
+                </div>
+            </div>
+        </div>`;
+    }
+    
     next7DaysEl.innerHTML += out;
 }
 
@@ -105,8 +131,8 @@ function displayWeather() {
     weatherIcon.innerHTML = `<img src="./icons/${weather.iconId}.png" alt="${weather.description}">`;
     tempValue.textContent = `${weather.temperature.value}`;
     // let daily = weather.daily;
-    for(let i = 0; i < weather.daily.length; i++) {
-        displayNextDay();
+    for(let i = 0; i < 7; i++) {
+        displayNextDay(i);
     }
 }
 
