@@ -31,10 +31,10 @@ function displayNextDay(idx) {
         </div>
         <div class="minmax-temp">
             <div class="temp-value-max">
-                <p>${Math.floor(weather.daily[idx].temp.day)-KELVIN}°</p>
+                <p>${Math.floor(weather.daily[idx].temp.max)-KELVIN}°</p>
             </div>
             <div class="temp-value-min">
-                <p>${Math.floor(weather.daily[idx].temp.night)-KELVIN}°</p>
+                <p>${Math.floor(weather.daily[idx].temp.min)-KELVIN}°</p>
             </div>
         </div>
     </div>`;
@@ -49,10 +49,10 @@ function displayNextDay(idx) {
             </div>
             <div class="minmax-temp">
                 <div class="temp-value-max">
-                    <p>${Math.floor(weather.daily[idx].temp.day)-KELVIN}°</p>
+                    <p>${Math.floor(weather.daily[idx].temp.max)-KELVIN}°</p>
                 </div>
                 <div class="temp-value-min">
-                    <p>${Math.floor(weather.daily[idx].temp.night)-KELVIN}°</p>
+                    <p>${Math.floor(weather.daily[idx].temp.min)-KELVIN}°</p>
                 </div>
             </div>
         </div>`;
