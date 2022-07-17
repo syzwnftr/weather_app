@@ -4,10 +4,6 @@ const weatherIcon = document.querySelector('#weatherIcon');
 const tempValue = document.querySelector('#tempValue');
 const next7DaysEl = document.getElementById('next7days');
 const mainDate = document.querySelector('.main-date');
-// const tempMax = document.querySelector('#tempMax');
-// const tempMin = document.querySelector('#tempMin');
-// const lowHighTemp = document.querySelector('#lowHighTemp');
-// const tempCondition = document.querySelector('.temp-condition p');
 
 // Weather data
 const weather = {};
@@ -116,9 +112,6 @@ async function getWeather(latitude, longitude) {
             weather.city = data.name;
             weather.country = data.sys.country;
         })
-        // .then(function() {
-        //     displayWeather();
-        // });
 
     fetch(oneApi)
         .then(response => {
