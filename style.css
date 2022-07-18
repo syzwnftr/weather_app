@@ -142,8 +142,6 @@ body {
     align-items: center;
     overflow-x: scroll;
     margin-left: 1rem;
-    /* padding: 0 0 2rem 0; */
-    /* scrollbar-color: #f3c112 #f3c21236; */
     scrollbar-width: none;
 }
 
@@ -232,12 +230,9 @@ body {
 }
 
 .condition-icon {
-    /* outline: 1px solid black; */
     display: flex;
     align-items: center;
-    /* justify-content: center; */
     flex-basis: 50%;
-    /* padding-left: 1rem; */
 }
 
 .condition-icon p {
@@ -248,7 +243,6 @@ body {
 }
 
 .condition-icon img {
-    /* outline: 1px solid black; */
     max-width: 30px;
 }
 
