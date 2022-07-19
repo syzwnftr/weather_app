@@ -17,6 +17,7 @@ function displayNextHour(idx) {
     let unix_timestamp = weather.hourly[idx].dt;
     let hours = new Date(unix_timestamp * 1000).getHours();
 
+
     let out = 
     `<div class="hourly-box">
         <div class="icon-wrapper">
@@ -56,6 +57,24 @@ function displayNextHour(idx) {
             </div>
             <div class="time-temp">
                 <p class="hourly-time">${hours} pm</p>
+                <div class="hourly-temp-value-unit">
+                    <p class="temp-value hourly-value">${Math.floor(weather.hourly[idx].temp)-KELVIN}</p>
+                    <p class="temp-unit hourly-unit">°C</p>
+                </div>
+            </div>
+        </div>`;
+    }
+
+    
+    if(hours === 0) {
+        hours = 12;
+        out = 
+        `<div class="hourly-box">
+            <div class="icon-wrapper">
+                <img src="./icons/${weather.hourly[idx].weather[0].icon}.png" alt="">
+            </div>
+            <div class="time-temp">
+                <p class="hourly-time">${hours} am</p>
                 <div class="hourly-temp-value-unit">
                     <p class="temp-value hourly-value">${Math.floor(weather.hourly[idx].temp)-KELVIN}</p>
                     <p class="temp-unit hourly-unit">°C</p>
@@ -198,7 +217,7 @@ function displayWeather() {
         displayNextDay(i);
     }
 
-    for(let i = 0; i < weather.hourly.length; i++) {
+    for(let i = 0; i < 13; i++) {
         displayNextHour(i);
     }
 }
