@@ -11,6 +11,8 @@ weather.temperature = {
     unit: 'celcius'
 }
 
+
+// Next 7 days weather
 function displayNextDay(idx) {
     let today = new Date().getDay() + idx;
 
@@ -89,9 +91,9 @@ function setPosition(position) {
 }
 
 // Get weather from API provider
-async function getWeather(latitude, longitude) {
+function getWeather(latitude, longitude) {
     let api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${APIKEY}`;
-    let oneApi = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=current,minutely,hourly&appid=${APIKEY}`;
+    let oneApi = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=current,minutely&appid=${APIKEY}`;
 
     console.log(api);   
     console.log(oneApi);
@@ -119,13 +121,14 @@ async function getWeather(latitude, longitude) {
             console.log(data);
             return data;
         }).then(data => {
+            weather.hourly = data.hourly;
             weather.daily = data.daily;
         })
         .then(function() {
             displayWeather();
         });
 
-        console.log('weather', weather)
+        // console.log('weather', weather)
 
 }
 
