@@ -3,6 +3,7 @@ const cityValue = document.querySelector('#city');
 const weatherIcon = document.querySelector('#weatherIcon');
 const tempValue = document.querySelector('#tempValue');
 const next7DaysEl = document.getElementById('next7days');
+const hourlyWeatherEl = document.getElementById('hourlyWeatherEl');
 const mainDate = document.querySelector('.main-date');
 
 // Weather data
@@ -11,6 +12,25 @@ weather.temperature = {
     unit: 'celcius'
 }
 
+// Next hours weather
+function displayNextHour(idx) {
+    let unix_timestamp = weather.hourly[idx].dt;
+    let hours = new Date(unix_timestamp * 1000).getHours();
+    let out = 
+    `<div class="hourly-box">
+        <div class="icon-wrapper">
+            <img src="./icons/${weather.hourly[idx].weather[0].icon}.png" alt="">
+        </div>
+        <div class="time-temp">
+            <p class="hourly-time">${hours} am</p>
+            <div class="hourly-temp-value-unit">
+                <p class="temp-value hourly-value">${Math.floor(weather.hourly[idx].temp)-KELVIN}</p>
+                <p class="temp-unit hourly-unit">°C</p>
+            </div>
+        </div>
+    </div>`;
+    hourlyWeatherEl.innerHTML += out;
+}
 
 // Next 7 days weather
 function displayNextDay(idx) {
@@ -141,6 +161,10 @@ function displayWeather() {
     // let daily = weather.daily;
     for(let i = 0; i < 7; i++) {
         displayNextDay(i);
+    }
+
+    for(let i = 0; i < 7; i++) {
+        displayNextHour(i);
     }
 }
 
