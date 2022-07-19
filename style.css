@@ -152,7 +152,7 @@ body {
 
 .hourly-box {
     width: 100px;
-    height: 150px;
+    height: 140px;
     padding: 1rem;
     border-radius: 1.5rem;
     background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0));
@@ -164,11 +164,13 @@ body {
 }
 
 .icon-wrapper {
+    /* outline: 1px solid black; */
     text-align: right;
 }
 
 .icon-wrapper img {
     max-width: 60px;
+    max-height: 40px;
 }
 
 .hourly-time {
