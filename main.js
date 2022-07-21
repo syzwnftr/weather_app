@@ -227,18 +227,18 @@ function displayWeather() {
 // Chart.js 
 const labels = ['10AM', '12 PM', '2PM', '4PM', '6PM'];
 
-  const data = {
+const data = {
     labels: labels,
     datasets: [{
-      label: 'Chance of rain(%)',
-      backgroundColor: '#e7ce60',
-      borderColor: '#e7ce60',
-      data: [7, 12, 10, 30, 40],
-      tension: 0.4
+        label: 'Chance of rain(%)',
+        backgroundColor: '#e7ce60',
+        borderColor: '#e7ce60',
+        data: [7, 12, 10, 30, 40],
+        tension: 0.4
     }]
-  };
+};
 
-  const config = {
+const config = {
     type: 'line',
     data: data,
     options: {
