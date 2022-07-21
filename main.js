@@ -86,7 +86,6 @@ function displayNextHour(idx) {
     }
 
     hourlyWeatherEl.innerHTML += out;
-    console.log(hours)
     return hours;
 }
 
@@ -227,9 +226,29 @@ function displayWeather() {
     }
 
     // console.log(hoursForChart) 
+    console.log('hourly',weather.hourly);
+
+
+    //To get hours from API
+    function getHours(idx) {
+        let unix_timestamp = weather.hourly[idx].dt;
+        let hours = new Date(unix_timestamp * 1000).getHours();
     
+        if(hours === 0) return '12AM';
+
+        if(hours === 12) return hours + 'PM';
+    
+        if(hours > 12) {
+            hours = hours - 12;
+            return hours + 'PM';
+        }
+
+        if(hours < 12) return hours + 'AM';
+    }
+
     //Chart.js 
-    const labels = ['10AM', '12 PM', '2PM', '4PM', '6PM', '8pm'];
+    // const labels = ['10AM', '12 PM', '2PM', '4PM', '6PM', '8pm'];
+    const labels = [getHours(0), getHours(2), getHours(4), getHours(6), getHours(8), getHours(10)];
 
     const data = {
     labels: labels,
