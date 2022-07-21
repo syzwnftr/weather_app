@@ -12,6 +12,8 @@ weather.temperature = {
     unit: 'celcius'
 }
 
+const hoursForChart = []; 
+
 // Next hours weather
 function displayNextHour(idx) {
     let unix_timestamp = weather.hourly[idx].dt;
@@ -84,6 +86,8 @@ function displayNextHour(idx) {
     }
 
     hourlyWeatherEl.innerHTML += out;
+    console.log(hours)
+    return hours;
 }
 
 // Next 7 days weather
@@ -218,27 +222,27 @@ function displayWeather() {
     }
 
     for(let i = 0; i < 13; i++) {
+        // hoursForChart.push( displayNextHour(i));
         displayNextHour(i);
     }
-}
 
+    // console.log(hoursForChart) 
+    
+    //Chart.js 
+    const labels = ['10AM', '12 PM', '2PM', '4PM', '6PM', '8pm'];
 
-
-// Chart.js 
-const labels = ['10AM', '12 PM', '2PM', '4PM', '6PM'];
-
-const data = {
+    const data = {
     labels: labels,
     datasets: [{
-        label: 'Chance of rain(%)',
-        backgroundColor: '#e7ce60',
-        borderColor: '#e7ce60',
-        data: [7, 12, 10, 30, 40],
-        tension: 0.4
+      label: 'Chance of rain(%)',
+      backgroundColor: '#e7ce60',
+      borderColor: '#e7ce60',
+      data: [7, 12, 10, 30, 40, 90],
+      tension: 0.4
     }]
-};
+  };
 
-const config = {
+  const config = {
     type: 'line',
     data: data,
     options: {
@@ -284,3 +288,66 @@ const config = {
   };
 
   const myChart = new Chart(document.getElementById('myChart'), config);
+
+}
+
+// Chart.js 
+// const labels = ['10AM', '12 PM', '2PM', '4PM', '6PM', '8pm'];
+
+//   const data = {
+//     labels: labels,
+//     datasets: [{
+//       label: 'Chance of rain(%)',
+//       backgroundColor: '#e7ce60',
+//       borderColor: '#e7ce60',
+//       data: [7, 12, 10, 30, 40, 90],
+//       tension: 0.4
+//     }]
+//   };
+
+//   const config = {
+//     type: 'line',
+//     data: data,
+//     options: {
+//         plugins: {
+//             legend: {
+//                 display: false,
+//             }
+//         },
+//         scales: {
+//             y: {
+//                 grid: {
+//                     display: false,
+//                     drawBorder: false
+//                 },
+//                 ticks: {
+//                     color: '#525274',
+//                     maxTicksLimit: 3,
+//                     callback: ((context, index) => {
+//                         let response;
+//                         if(context >= 40) {
+//                             response = 'High';
+//                         } else if(context >= 20) {
+//                             response = 'Medium';
+//                         } else {
+//                             response = 'Low';
+//                         }
+
+//                         return response;
+//                     })
+//                 }
+//             },
+//             x: {
+//                 grid: {
+//                     display: false,
+//                     drawBorder: false
+//                 },
+//                 ticks: {
+//                     color: '#525274'
+//                 }
+//             }
+//         }
+//     }
+//   };
+
+//   const myChart = new Chart(document.getElementById('myChart'), config);
