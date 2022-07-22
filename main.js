@@ -254,7 +254,7 @@ function displayWeather() {
 
     //Chart.js 
     // const labels = ['10AM', '12 PM', '2PM', '4PM', '6PM', '8pm'];
-    const labels = [getHours(0), getHours(2), getHours(4), getHours(6), getHours(8), getHours(10)];
+    const labels = [getHours(0), getHours(1), getHours(2), getHours(3), getHours(4), getHours(5)];
 
     const data = {
     labels: labels,
@@ -263,7 +263,7 @@ function displayWeather() {
       backgroundColor: '#e7ce60',
       borderColor: '#e7ce60',
     //   data: [7, 12, 10, 30, 40, 90],
-      data: [getPop(0), getPop(2), getPop(4), getPop(6), getPop(8), getPop(10)],
+      data: [getPop(0), getPop(1), getPop(2), getPop(3), getPop(4), getPop(5)],
       tension: 0.4
     }]
   };
