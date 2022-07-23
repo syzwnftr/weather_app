@@ -265,12 +265,15 @@ function displayWeather() {
     //   data: [7, 12, 10, 30, 40, 90],
     //   data: [0, 0, 30, 20, 10, 10],
       data: [getPop(0), getPop(1), getPop(2), getPop(3), getPop(4), getPop(5)],
-      tension: 0.5
+      tension: 0.5,
+      barPercentage: 0.25,
+      borderSkipped: false,
+      borderRadius: 20
     }]
   };
 
   const config = {
-    type: 'line',
+    type: 'bar',
     data: data,
     options: {
         plugins: {
