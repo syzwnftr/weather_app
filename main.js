@@ -263,13 +263,14 @@ function displayWeather() {
       backgroundColor: '#e7ce60',
       borderColor: '#e7ce60',
     //   data: [7, 12, 10, 30, 40, 90],
+    //   data: [0, 0, 30, 20, 10, 10],
       data: [getPop(0), getPop(1), getPop(2), getPop(3), getPop(4), getPop(5)],
-      tension: 0.4
+      tension: 0.5
     }]
   };
 
   const config = {
-    type: 'bar',
+    type: 'line',
     data: data,
     options: {
         plugins: {
@@ -288,12 +289,12 @@ function displayWeather() {
                     maxTicksLimit: 3,
                     callback: ((context, index) => {
                         let response;
-                        if(context >= 40) {
-                            response = 'High';
-                        } else if(context >= 20) {
-                            response = 'Medium';
+                        if(context >= 70) {
+                            response = 'Likely';
+                        } else if(context >= 40) {
+                            response = 'Possible';
                         } else {
-                            response = 'Low';
+                            response = 'Unlikely';
                         }
 
                         return response;
