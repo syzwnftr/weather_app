@@ -24,8 +24,6 @@ body {
     padding: 2rem 0 2.5rem 0;
     background: rgb(2,0,36);
     background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(36,37,83,1) 83%);
-    /* background: rgb(21, 29, 42);
-    background: linear-gradient(180deg, rgba(21, 29, 42, 1) 0%, rgb(32, 43, 63) 83%); */
 }
 
 .margin-x {
