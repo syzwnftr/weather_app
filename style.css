@@ -273,15 +273,29 @@ body {
         font-size: 4rem;
     }
 
-    /* #weatherIcon img {
-        max-width: 200px;
-    } */
+}
+
+@media (min-width: 480px) {
+    .temp-value-unit .temp-value {
+        font-size: 6rem;
+    }
 
 }
 
-/* @media (min-width: 480px) {
+@media (min-width: 560px) {
     .temp-value-unit .temp-value {
-        font-size: 5rem;
+        font-size: 7rem;
+    }
+}
+
+
+@media (min-width: 720px) {
+    .temp-value-unit .temp-value {
+        font-size: 8rem;
     }
 
-} */
+    /* #weatherIcon img {
+        max-width: 100%;
+    } */
+
+}
