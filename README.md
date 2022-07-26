@@ -1,3 +1,5 @@
-#link
+# Local Weather App
 
-https://syzwnftr.github.io/weather_app/
+
+### Links
+- Live Site URL: https://syzwnftr.github.io/weather_app/
