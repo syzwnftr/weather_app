@@ -289,13 +289,31 @@ body {
 }
 
 
-@media (min-width: 720px) {
-    .temp-value-unit .temp-value {
-        font-size: 8rem;
+@media (min-width: 600px) {
+    .main-today-weather {
+        /* outline: 1px solid white; */
+        max-width: 500px;
+        margin: 0 auto;
+        margin-bottom: 2rem;
     }
 
-    /* #weatherIcon img {
-        max-width: 100%;
-    } */
+    .today-weather-hourly {
+        /* outline: 1px solid white; */
+        max-width: 500px;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+    }
+    
+    .rain-chances {
+        max-width: 500px;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+    }
+
+    .next-seven-days {
+        max-width: 500px;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+    }
 
 }
