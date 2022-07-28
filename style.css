@@ -96,13 +96,11 @@ body {
     margin-top: .4rem;
     font-size: 1.8rem;
     color: #f3c112;
-    /* color: #e8ce51; */
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
 }
 
 #weatherIcon img {
-    /* outline: 1px solid black; */
     max-width: 100%;
 }
 
